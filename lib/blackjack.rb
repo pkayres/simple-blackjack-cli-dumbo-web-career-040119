@@ -58,4 +58,3 @@ def runner
    hit?(answer) until answer < 21
  end_game
 end
-end 
