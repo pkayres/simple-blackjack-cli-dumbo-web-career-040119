@@ -23,38 +23,39 @@ def end_game(card_total)
 end
 
 def initial_round
-  sum = deal_card + deal_card
-  print display_card_total(sum)
-  return sum
-
+  card_total = deal_card + deal_card
+  display_card_total(card_total)
+  return card_total
 end
 
 
-def hit?(number)
-  print prompt_user
+def hit?(card_total)
+  prompt_user
   answer = get_user_input
-  if answer == "s"
-    return number
-  elsif answer == "h"
-    return number + deal_card
+  if answer == "h"
+    card_total += deal_card
+  elsif answer == "s"
+    card_total
   else
-    print invalid_command
+    invalid_command
 end
 end
 
 def invalid_command
-  print "Please enter a valid command"
-  print prompt_user
+  puts "Please enter a valid command"
+  prompt_user
+  get_user_input
 end
 
-#####################################################
-# get every test to pass before coding runner below #
-#####################################################
 
 def runner
-   welcome
-   initial_round
-   answer = initial_round
-   hit?(answer) until answer < 21
- end_game
+  welcome
+  card_total = initial_round
+  until card_total > 21
+    card_total = hit?(card_total)
+    display_card_total(card_total)
+  end
+  end_game(card_total)
 end
+
+runner 
