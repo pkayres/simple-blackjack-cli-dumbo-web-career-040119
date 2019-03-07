@@ -52,7 +52,7 @@ end
 #####################################################
 
 def runner
-  puts welcome
-  puts hit?(initial_round) 
-  puts end_game
+   welcome
+   hit?(initial_round)
+   end_game
 end
