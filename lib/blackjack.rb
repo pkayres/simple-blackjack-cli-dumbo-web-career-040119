@@ -56,3 +56,4 @@ def runner
    until hit?(initial_round) > 21
    end_game
 end
+end
