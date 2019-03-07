@@ -54,6 +54,8 @@ end
 def runner
    welcome
    initial_round
-   hit?(number) until number < 21
-   end_game
+   answer = initial_round
+   hit?(answer) until answer < 21
+ end_game
 end
+end 
